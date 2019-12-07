@@ -23,7 +23,7 @@ class JogosController extends Controller
      */
     public function create()
     {
-        return view('jogos.create');
+        return view('jogos.cadastro');
     }
 
     /**
@@ -45,7 +45,7 @@ class JogosController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('jogos.lista');
     }
 
     /**

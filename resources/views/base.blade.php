@@ -31,14 +31,14 @@
   
 </head>
 <body>
-<nav id="menu">
+  <nav id="menu">
     <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/contacts">Contacts</a></li>
-        <li><a href="/users">Users</a></li>
+      <li><a href="/">Home</a></li>
+      <li><a href="/contacts">Contacts</a></li>
+      <li><a href="/users">Users</a></li>
     </ul>
-</nav>
-    
+  </nav>
+  
   <div class="container">
     @yield('main')
   </div>

@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -8,7 +7,7 @@
   <meta name="author" content="">
   <link rel="icon" href="../../../../favicon.ico">
 
-  <title>Franquia X</title>
+  <title>Cadastro de Jogos</title>
 
   <!-- Principal CSS do Bootstrap -->
   <link href="https://getbootstrap.com.br/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -20,27 +19,14 @@
   <body class="text-center">
 
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-      <header class="masthead mb-auto">
-        <div class="inner">
-          <nav class="nav nav-masthead justify-content-center">
-          </nav>
-        </div>
-      </header>
-
       <main role="main" class="inner cover">
-        <h1 class="cover-heading">Franquia X</h1>
-        <p class="lead">Sua Wiki de jogos digitais</p>
+        <h1 class="cover-heading">Cadastro de Jogos</h1>
+        <p class="lead">Cadastre os jogos que desejar</p>
         <p class="lead">
-          <a href="Jogo/create" class="btn btn-lg btn-secondary">Cadastro de Jogos</a>
-          <a href="Jogo/show" class="btn btn-lg btn-secondary">Lista de Jogos</a>
+          <a href="/Jogo" class="btn btn-lg btn-secondary">Home</a>
+          <a href="#" class="btn btn-lg btn-secondary">Cadastrar</a>
         </p>
       </main>
-
-      <footer class="mastfoot mt-auto">
-        <div class="inner">
-          <p>Site desenvolvido por <a href="https://github.com/franpgn">@franpgn</a> e <a href="https://github.com/Sanderson910">@sanderson910</a></p>
-        </div>
-      </footer>
     </div>
 
     <!-- Principal JavaScript do Bootstrap
