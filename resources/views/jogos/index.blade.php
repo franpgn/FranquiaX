@@ -39,6 +39,7 @@
       <footer class="mastfoot mt-auto">
         <div class="inner">
           <p>Site desenvolvido por <a href="https://github.com/franpgn">@franpgn</a> e <a href="https://github.com/Sanderson910">@sanderson910</a></p>
+          <p>Link para o repositório no GitHub: <a href=""></a></p>
         </div>
       </footer>
     </div>
