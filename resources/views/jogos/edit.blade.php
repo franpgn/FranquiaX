@@ -13,7 +13,7 @@
   <link href="https://getbootstrap.com.br/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Estilos customizados para esse template -->
-  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
   <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=3zcPJe0O3F5m3RhRBh40LMYGUL9Q-GQNaqF-OKPqNjkarBXoguc7vezcIFANBWeemk5MLp1ANOL-OON2FDHHN_xbSlNwv63d2dEBrYFy3KE" charset="UTF-8"></script></head>
 
   <body class="text-center">
@@ -29,18 +29,46 @@
       <main role="main" class="inner cover">
         <h1 class="cover-heading">Franquia X</h1>
         <p class="lead">Sua Wiki de jogos digitais</p>
-        <p class="lead">
-          <a href="Jogo/create" class="btn btn-lg btn-secondary">Cadastro de Jogos</a>
-          <a href="Jogo/show" class="btn btn-lg btn-secondary">Lista de Jogos</a>
-        </p>
-      </main>
 
-      <footer class="mastfoot mt-auto">
-        <div class="inner">
-          <p>Site desenvolvido por <a target="_blank" href="https://github.com/franpgn">@franpgn</a> e <a target="_blank" href="https://github.com/Sanderson910">@sanderson910</a></br>
-          Link para o repositório no GitHub: <a target="_blank" href="https://github.com/franpgn/FranquiaX/">Franquia X</a></p>
+
+        @if ($errors->any())
+        <div class="alert alert-danger">
+          <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+          </ul>
         </div>
-      </footer>
+        <br /> 
+        @endif
+        <form method="post" action="{{ route('Jogo.update', $jogos->id) }}">
+          @method('PATCH') 
+          @csrf
+          <div class="form-group">    
+            <label for="first_name">Título:</label>
+            <input type="text" class="form-control" name="nome"/>
+          </div>
+
+          <div class="form-group">
+            <label for="last_name">Empresa:</label>
+            <input type="text" class="form-control" name="empresa"/>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Data:</label>
+            <input type="text" class="form-control" name="data"/>
+          </div> 
+          <div class="form-group">
+            <label for="email">Console:</label>
+            <input type="text" class="form-control" name="console"/>
+          </div> 
+          <div class="form-group">
+            <label for="email">Resumo:</label>
+            <input type="text" class="form-control" name="resumo"/>
+          </div> 
+          <button type="submit" class="btn btn-lg btn-secondary">Atualizar</button>
+        </form>
+      </main>
     </div>
 
     <!-- Principal JavaScript do Bootstrap

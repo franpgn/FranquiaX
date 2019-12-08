@@ -55,11 +55,11 @@
             <label for="email">Resumo do Jogo:</label>
             <input type="text" class="form-control" name="resumo"/>
           </div>                    
-          <button type="submit" class="btn btn-lg btn-secondary">Cadastrar</button>
+          <p class="lead">
+            <button type="submit" class="btn btn-lg btn-secondary">Cadastrar</button>
+            <a href="/Jogo" class="btn btn-lg btn-secondary">Home</a>
+          </p>
         </form>
-        <p class="lead">
-          <a href="/Jogo" class="btn btn-lg btn-secondary">Home</a>
-        </p>
       </main>
     </div>
 

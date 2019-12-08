@@ -17,16 +17,52 @@
   <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=3zcPJe0O3F5m3RhRBh40LMYGUL9Q-GQNaqF-OKPqNjkarBXoguc7vezcIFANBWeemk5MLp1ANOL-OON2FDHHN_xbSlNwv63d2dEBrYFy3KE" charset="UTF-8"></script></head>
 
   <body class="text-center">
-
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
       <main role="main" class="inner cover">
         <h1 class="cover-heading">Lista de Jogos</h1>
         <p class="lead">Aqui você encontra todos os jogos cadastrados no site</p>
-        <p class="lead">
-          <a href="/Jogo" class="btn btn-lg btn-secondary">Home</a>
-        </p>
-      </main>
-    </div>
+
+        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <td>id</td>
+                <td>Título</td>
+                <td>Empresa</td>
+                <td>Ano</td>
+                <td>Console</td>
+                <td colspan = 2>Ações</td>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach($jogos as $jogo)
+              <tr>
+                <td>{{$jogo->id}}</td>
+                <td>{{$jogo->nome}}</td>
+                <td>{{$jogo->empresa}}</td>
+                <td>{{$jogo->data}}</td>
+                <td>{{$jogo->console}}</td>
+                <td>
+                  <a href="{{ route('Jogo.edit',$jogo->id)}}" class="btn btn-secondary">Editar</a>
+                </td>
+                <td>
+                  <form action="{{ route('Jogo.destroy', $jogo->id)}}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-terciary" type="submit">Deletar</button>
+                  </form>
+                </td>
+              </tr>
+              @endforeach
+            </tbody>
+          </table>
+          <div>
+            <p class="lead">
+              <a href="/Jogo" class="btn btn-lg btn-secondary">Home</a>
+              <a class="btn btn-lg btn-secondary" href="{{ route('Jogo.create')}}">Cadastrar Jogo</a>
+            </p>
+          </main>
+        </div>
 
     <!-- Principal JavaScript do Bootstrap
       ================================================== -->

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Jogo;
 
 class JogosController extends Controller
 {
@@ -13,7 +15,11 @@ class JogosController extends Controller
      */
     public function index()
     {
-        return view('jogos.index');
+        if (Auth::check()) {
+            return view('jogos.index');
+        }else{
+            return redirect ('/login')->with('failure', 'Faça o Login');
+        }
     }
 
     /**
@@ -23,7 +29,11 @@ class JogosController extends Controller
      */
     public function create()
     {
-        return view('jogos.cadastro');
+        if (Auth::check()) {
+            return view('jogos.cadastro');
+        }else{
+            return redirect ('/login')->with('failure', 'Faça o Login'); 
+        }
     }
 
     /**
@@ -34,15 +44,20 @@ class JogosController extends Controller
      */
     public function store(Request $request)
     {
-        $Jogo = new Jogo([
-            'nome' => $request->get('nome'),
-            'data' => $request->get('data'),
-            'empresa' => $request->get('empresa'),
-            'console' => $request->get('console'),
-            'resumo' => $request ->get('resumo'),
-        ]);
-        $Jogo->save();
-        return redirect('/Jogo')->with('successo', 'Jogo Cadastrado!');
+        if (Auth::check()) {
+            $Jogo = new Jogo([
+                'nome' => $request->get('nome'),
+                'data' => $request->get('data'),
+                'empresa' => $request->get('empresa'),
+                'console' => $request->get('console'),
+                'resumo' => $request ->get('resumo'),
+            ]);
+            $Jogo->save();
+            return redirect('/Jogo/show')->with('success', 'Jogo Cadastrado!');
+        }else{
+            return redirect ('/login')->with('failure', 'Faça o Login');
+        }
+        
     }
 
     /**
@@ -53,8 +68,14 @@ class JogosController extends Controller
      */
     public function show($id)
     {
-        return view('jogos.lista');
+        if (Auth::check()) {
+         $jogos = Jogo::get();
+         return view('jogos.lista', compact ('jogos'));
+     }else{
+        return redirect ('/login')->with('failure', 'Faça o Login');
     }
+
+}
 
     /**
      * Show the form for editing the specified resource.
@@ -64,8 +85,14 @@ class JogosController extends Controller
      */
     public function edit($id)
     {
-        //
+        if (Auth::check()) {
+         $jogos = Jogo::find($id);
+         return view('jogos.edit', compact('jogos'));
+     }else{
+        return redirect ('/login')->with('failure', 'Faça o Login');
     }
+
+}
 
     /**
      * Update the specified resource in storage.
@@ -76,8 +103,29 @@ class JogosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       if (Auth::check()) {
+         $request->validate([
+            'nome'=>'required',
+            'empresa'=>'required',
+            'data'=>'required',
+            'console'=>'required',
+            'resumo'=>'required'
+        ]);
+
+         $jogos = Jogo::find($id);
+         $jogos->nome =  $request->get('nome');
+         $jogos->empresa = $request->get('empresa');
+         $jogos->data = $request->get('data');
+         $jogos->console = $request->get('console');
+         $jogos->resumo = $request->get('resumo');
+         $jogos->save();
+
+         return redirect('/Jogo/show')->with('success', 'Cadastro atualizado!');
+
+     }else{
+        return redirect ('/login')->with('failure', 'Faça o Login');
     }
+}
 
     /**
      * Remove the specified resource from storage.
@@ -87,6 +135,14 @@ class JogosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if (Auth::check()) {
+          $Jogo = Jogo::find($id);
+          $Jogo->delete();
+
+          return redirect('/Jogo/show')->with('success', 'Jogo deletado!');
+      }else{
+        return redirect ('/login')->with('failure', 'Faça o Login');
     }
+    
+}
 }
