@@ -38,8 +38,8 @@
 
       <footer class="mastfoot mt-auto">
         <div class="inner">
-          <p>Site desenvolvido por <a href="https://github.com/franpgn">@franpgn</a> e <a href="https://github.com/Sanderson910">@sanderson910</a></p>
-          <p>Link para o repositório no GitHub: <a href="https://github.com/franpgn/FranquiaX/">Franquia X</a></p>
+          <p>Site desenvolvido por <a target="_blank" href="https://github.com/franpgn">@franpgn</a> e <a target="_blank" href="https://github.com/Sanderson910">@sanderson910</a></br>
+          Link para o repositório no GitHub: <a target="_blank" href="https://github.com/franpgn/FranquiaX/">Franquia X</a></p>
         </div>
       </footer>
     </div>
