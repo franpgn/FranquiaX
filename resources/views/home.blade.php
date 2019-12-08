@@ -24,21 +24,22 @@
           </nav>
         </div>
       </header>
-      <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-        <main role="main" class="inner cover">
-          <h1 class="cover-heading">Franquia X</h1>
-          <div class="card-body">
-            @if (session('status'))
-            <div class="alert alert-success" role="alert">
-              {{ session('status') }}
-            </div>
-            @endif
+      <main role="main" class="inner cover">
+        <h1 class="cover-heading">Franquia X</h1>
+        @if (session('status'))
+        <div class="alert alert-success" role="alert">
+          {{ session('status') }}
+        </div>
+        @endif
+        <p class="lead">Você está Conectado!</p></br>
+        <a href="/Jogo" class="btn btn-lg btn-secondary">Ir para o Site</a>
+      </main>
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+        </div>
+      </footer>      
+    </div>
 
-            Você está conectado!
-          </div>
-          <a href="/Jogo" class="btn btn-lg btn-secondary">Ir para o Site</a>
-        </main>
-      </div>
 
     <!-- Principal JavaScript do Bootstrap
       ================================================== -->
