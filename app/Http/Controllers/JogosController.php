@@ -34,21 +34,14 @@ class JogosController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'nome'=>'required',
-            'empresa'=>'required',
-            'data'=>'required',
-            'console'=>'required'
-        ]);
-
-        $JogosController = new JogosController([
+        $Jogo = new Jogo([
             'nome' => $request->get('nome'),
             'data' => $request->get('data'),
             'empresa' => $request->get('empresa'),
             'console' => $request->get('console'),
             'resumo' => $request ->get('resumo'),
         ]);
-        $JogosController->save();
+        $Jogo->save();
         return redirect('/Jogo')->with('successo', 'Jogo Cadastrado!');
     }
 
