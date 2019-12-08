@@ -21,10 +21,44 @@
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
       <main role="main" class="inner cover">
         <h1 class="cover-heading">Cadastro de Jogos</h1>
-        <p class="lead">Cadastre os jogos que desejar</p>
+        <p class="lead">Cadastre os jogos que desejar</p></br>
+        @if ($errors->any())
+        <div class="alert alert-danger">
+          <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+          </ul>
+        </div><br />
+        @endif
+        <form method="post" action="{{ route('jogos.store') }}">
+          @csrf
+          <div class="form-group">    
+            <label for="first_name">Título:</label>
+            <input type="text" class="form-control" name="nome"/>
+          </div>
+
+          <div class="form-group">
+            <label for="last_name">Empresa:</label>
+            <input type="text" class="form-control" name="empresa"/>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Data de Lançamento:</label>
+            <input type="text" class="form-control" name="data"/>
+          </div>      
+          <div class="form-group">
+            <label for="email">Console:</label>
+            <input type="text" class="form-control" name="console"/>
+          </div>      
+          <div class="form-group">
+            <label for="email">Resumo do Jogo:</label>
+            <input type="text" class="form-control" name="resumo"/>
+          </div>                    
+        </form>
         <p class="lead">
           <a href="/Jogo" class="btn btn-lg btn-secondary">Home</a>
-          <a href="#" class="btn btn-lg btn-secondary">Cadastrar</a>
+          <a type="submit" class="btn btn-lg btn-secondary">Cadastrar</a>
         </p>
       </main>
     </div>
