@@ -17,7 +17,6 @@
   <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=3zcPJe0O3F5m3RhRBh40LMYGUL9Q-GQNaqF-OKPqNjkarBXoguc7vezcIFANBWeemk5MLp1ANOL-OON2FDHHN_xbSlNwv63d2dEBrYFy3KE" charset="UTF-8"></script></head>
 
   <body class="text-center">
-
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
       <header class="masthead mb-auto">
         <div class="inner">
@@ -25,7 +24,6 @@
           </nav>
         </div>
       </header>
-
       <main role="main" class="inner cover">
         <h1 class="cover-heading">Franquia X</h1>
         <p class="lead">Sua Wiki de jogos digitais</p>
@@ -38,10 +36,10 @@
       <footer class="mastfoot mt-auto">
         <div class="inner">
           <p>Site desenvolvido por <a target="_blank" href="https://github.com/franpgn">@franpgn</a> e <a target="_blank" href="https://github.com/Sanderson910">@sanderson910</a></br>
-          Link para o repositório no GitHub: <a target="_blank" href="https://github.com/franpgn/FranquiaX/">Franquia X</a></p>
-        </div>
-      </footer>
-    </div>
+            Link para o repositório no GitHub: <a target="_blank" href="https://github.com/franpgn/FranquiaX/">Franquia X</a></p>
+          </div>
+        </footer>
+      </div>
 
     <!-- Principal JavaScript do Bootstrap
       ================================================== -->

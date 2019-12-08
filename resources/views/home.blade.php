@@ -17,22 +17,28 @@
   <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=3zcPJe0O3F5m3RhRBh40LMYGUL9Q-GQNaqF-OKPqNjkarBXoguc7vezcIFANBWeemk5MLp1ANOL-OON2FDHHN_xbSlNwv63d2dEBrYFy3KE" charset="UTF-8"></script></head>
 
   <body class="text-center">
-
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-      <main role="main" class="inner cover">
-        <h1 class="cover-heading">Franquia X</h1>
-        <div class="card-body">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <nav class="nav nav-masthead justify-content-center">
+          </nav>
+        </div>
+      </header>
+      <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <main role="main" class="inner cover">
+          <h1 class="cover-heading">Franquia X</h1>
+          <div class="card-body">
             @if (session('status'))
             <div class="alert alert-success" role="alert">
-                {{ session('status') }}
+              {{ session('status') }}
             </div>
             @endif
 
             Você está conectado!
-        </div>
-        <a href="/Jogo" class="btn btn-lg btn-secondary">Ir para o Site</a>
-    </main>
-</div>
+          </div>
+          <a href="/Jogo" class="btn btn-lg btn-secondary">Ir para o Site</a>
+        </main>
+      </div>
 
     <!-- Principal JavaScript do Bootstrap
       ================================================== -->
@@ -41,5 +47,5 @@
       <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
       <script src="../../assets/js/vendor/popper.min.js"></script>
       <script src="../../dist/js/bootstrap.min.js"></script>
-  </body>
-  </html>
+    </body>
+    </html>

@@ -69,15 +69,10 @@
                 <div class="col-md-6 offset-md-4">
                     <button type="submit" class="btn btn-lg btn-secondary">
                         {{ __('Login') }}
-                    </button><br>
-                    <a class="btn" href="{{ route('register') }}">
+                    </button>
+                    <a class="btn btn-lg btn-secondary" href="{{ route('register') }}">
                         Registrar
                     </a>
-                    @if (Route::has('password.request'))
-                    <a class="btn" href="{{ route('password.request') }}">
-                        Esqueceu a Senha?
-                    </a>
-                    @endif
                 </div>
             </div>
         </form>

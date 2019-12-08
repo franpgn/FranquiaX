@@ -67,6 +67,7 @@
             <input type="text" class="form-control" name="resumo"/>
           </div> 
           <button type="submit" class="btn btn-lg btn-secondary">Atualizar</button>
+          <a href="/Jogo/show" class="btn btn-lg btn-secondary">Voltar</a>
         </form>
       </main>
     </div>
