@@ -31,7 +31,7 @@
           </ul>
         </div><br />
         @endif
-        <form method="post" action="{{ route('jogos.store') }}">
+        <form method="post" action="{{ route('Jogo.store') }}">
           @csrf
           <div class="form-group">    
             <label for="first_name">Título:</label>
@@ -55,10 +55,10 @@
             <label for="email">Resumo do Jogo:</label>
             <input type="text" class="form-control" name="resumo"/>
           </div>                    
+          <button type="submit" class="btn btn-lg btn-secondary">Cadastrar</button>
         </form>
         <p class="lead">
           <a href="/Jogo" class="btn btn-lg btn-secondary">Home</a>
-          <a type="submit" class="btn btn-lg btn-secondary">Cadastrar</a>
         </p>
       </main>
     </div>

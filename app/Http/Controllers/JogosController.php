@@ -41,14 +41,14 @@ class JogosController extends Controller
             'console'=>'required'
         ]);
 
-        $livro = new Livro([
+        $JogosController = new JogosController([
             'nome' => $request->get('nome'),
             'data' => $request->get('data'),
             'empresa' => $request->get('empresa'),
             'console' => $request->get('console'),
             'resumo' => $request ->get('resumo'),
         ]);
-        $jogo->save();
+        $JogosController->save();
         return redirect('/Jogo')->with('successo', 'Jogo Cadastrado!');
     }
 
