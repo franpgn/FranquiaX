@@ -7,7 +7,7 @@
   <meta name="author" content="">
   <link rel="icon" href="../../../../favicon.ico">
 
-  <title>Franquia X</title>
+  <title>Edição</title>
 
   <!-- Principal CSS do Bootstrap -->
   <link href="https://getbootstrap.com.br/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -27,8 +27,8 @@
       </header>
 
       <main role="main" class="inner cover">
-        <h1 class="cover-heading">Franquia X</h1>
-        <p class="lead">Sua Wiki de jogos digitais</p>
+        <h1 class="cover-heading">Edição</h1>
+        <p class="lead">Edite os campos do Jogo</p>
 
 
         @if ($errors->any())

@@ -45,6 +45,13 @@ class JogosController extends Controller
     public function store(Request $request)
     {
         if (Auth::check()) {
+            $request->validate([
+                'nome'=>'required',
+                'empresa'=>'required',
+                'data'=>'required',
+                'console'=>'required',
+                'resumo'=>'required'
+            ]);
             $Jogo = new Jogo([
                 'nome' => $request->get('nome'),
                 'data' => $request->get('data'),
@@ -69,9 +76,9 @@ class JogosController extends Controller
     public function show($id)
     {
         if (Auth::check()) {
-         $jogos = Jogo::get();
-         return view('jogos.lista', compact ('jogos'));
-     }else{
+           $jogos = Jogo::get();
+           return view('jogos.lista', compact ('jogos'));
+       }else{
         return redirect ('/login')->with('failure', 'Faça o Login');
     }
 
@@ -86,9 +93,9 @@ class JogosController extends Controller
     public function edit($id)
     {
         if (Auth::check()) {
-         $jogos = Jogo::find($id);
-         return view('jogos.edit', compact('jogos'));
-     }else{
+           $jogos = Jogo::find($id);
+           return view('jogos.edit', compact('jogos'));
+       }else{
         return redirect ('/login')->with('failure', 'Faça o Login');
     }
 
@@ -103,28 +110,28 @@ class JogosController extends Controller
      */
     public function update(Request $request, $id)
     {
-       if (Auth::check()) {
-         $request->validate([
-            'nome'=>'required',
-            'empresa'=>'required',
-            'data'=>'required',
-            'console'=>'required',
-            'resumo'=>'required'
-        ]);
+     if (Auth::check()) {
+       $request->validate([
+        'nome'=>'required',
+        'empresa'=>'required',
+        'data'=>'required',
+        'console'=>'required',
+        'resumo'=>'required'
+    ]);
 
-         $jogos = Jogo::find($id);
-         $jogos->nome =  $request->get('nome');
-         $jogos->empresa = $request->get('empresa');
-         $jogos->data = $request->get('data');
-         $jogos->console = $request->get('console');
-         $jogos->resumo = $request->get('resumo');
-         $jogos->save();
+       $jogos = Jogo::find($id);
+       $jogos->nome =  $request->get('nome');
+       $jogos->empresa = $request->get('empresa');
+       $jogos->data = $request->get('data');
+       $jogos->console = $request->get('console');
+       $jogos->resumo = $request->get('resumo');
+       $jogos->save();
 
-         return redirect('/Jogo/show')->with('success', 'Cadastro atualizado!');
+       return redirect('/Jogo/show')->with('success', 'Cadastro atualizado!');
 
-     }else{
-        return redirect ('/login')->with('failure', 'Faça o Login');
-    }
+   }else{
+    return redirect ('/login')->with('failure', 'Faça o Login');
+}
 }
 
     /**
@@ -143,6 +150,6 @@ class JogosController extends Controller
       }else{
         return redirect ('/login')->with('failure', 'Faça o Login');
     }
-    
+
 }
 }
